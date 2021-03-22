@@ -1,0 +1,217 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width="device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="This is a site that fetches data about countries from the rest countries api and displays them in a pleasing way using html css and javascript">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- fonts from google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <!-- ===== -->
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/52f2afaff9.js" crossorigin="anonymous"></script>
+    <!--end of font awesome  -->
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./responsiveStyles/desktop.css">
+    <link rel="stylesheet" href="./responsiveStyles/tablet.css">
+    <link rel="stylesheet" href="./responsiveStyles/mobile.css">
+    <!-- end of styles -->
+  </head>
+  <body>
+    <!-- main container -->
+    <div class="main-container">
+    <!-- header -->
+    <header>
+      <!-- where in the world container -->
+      <div class="where-in-world">
+        <h3>Where in the World?</h3>
+      </div>
+      <!-- dark mode switcher container -->
+      <div class="dark-mode-switcher-container">
+        <i class="fas fa-moon"></i>
+        <span class="dark-mode-text">
+          dark mode
+        </span>
+      </div>
+      <!-- end of dark mode switcher -->
+    </header>
+    <!-- end of header -->
+    <!-- container center -->
+    <div class="container-center">
+    <!-- search form and filter form container -->
+    <div class="search-form-and-filter-form-container">
+    <!-- search form -->
+    <form action="" >
+      <div class="search-input-container">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search for a country" class="search-input">
+      </div>
+    </form>
+    <!-- end of search form  -->
+    <!-- filter select form container -->
+    <div class="filter-form-container">
+      <select name="" id="filter-countries">
+        <option value="africa">Africa</option>
+        <option value="america">America</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="ocean">Oceana</option>
+      </select>
+    </div>
+    <!-- end of filter select form container -->
+    </div>
+    <!-- end of select form and filter form container -->
+    <!--back button -->
+    <button class="back-button">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+    <!--end of back button -->
+    <!-- countries display container -->
+    <div class="countries-display-container">
+      <div class="countries-tiles-display">
+      <!-- country-tile -->
+      <div class="country-tile" data-region="region">
+        <div class="country-flag-image-container">
+          <img class="country-flag" src="./design/afg.svg" alt="image of a country's flag">
+        </div>
+        <div class="country-details">
+          <div class="country-name-container">
+            <h4 class="country-name">Germany</h4>
+          </div>
+          <div class="country-pop-reg-cap">
+            <div class="population">
+              Population: 81,770,900
+            </div>
+            <div class="region">
+              Region:Europe
+            </div>
+            <div class="capital">
+              Capital:Berlin
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of country-tile -->
+      <!-- country-tile -->
+      <div class="country-tile" data-region="region">
+        <div class="country-flag-image-container">
+          <img class="country-flag" src="./design/afg.svg" alt="image of a country's flag">
+        </div>
+        <div class="country-details">
+          <div class="country-name-container">
+            <h4 class="country-name">Germany</h4>
+          </div>
+          <div class="country-pop-reg-cap">
+            <div class="population">
+              Population: 81,770,900
+            </div>
+            <div class="region">
+              Region:Europe
+            </div>
+            <div class="capital">
+              Capital:Berlin
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of country-tile -->
+      <!-- country-tile -->
+      <div class="country-tile" data-region="region">
+        <div class="country-flag-image-container">
+          <img class="country-flag" src="./design/afg.svg" alt="image of a country's flag">
+        </div>
+        <div class="country-details">
+          <div class="country-name-container">
+            <h4 class="country-name">Germany</h4>
+          </div>
+          <div class="country-pop-reg-cap">
+            <div class="population">
+              Population: 81,770,900
+            </div>
+            <div class="region">
+              Region:Europe
+            </div>
+            <div class="capital">
+              Capital:Berlin
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of country-tile -->
+      <!-- country-tile -->
+      <div class="country-tile" data-region="region">
+        <div class="country-flag-image-container">
+          <img class="country-flag" src="./design/afg.svg" alt="image of a country's flag">
+        </div>
+        <div class="country-details">
+          <div class="country-name-container">
+            <h4 class="country-name">Germany</h4>
+          </div>
+          <div class="country-pop-reg-cap">
+            <div class="population">
+              Population: 81,770,900
+            </div>
+            <div class="region">
+              Region:Europe
+            </div>
+            <div class="capital">
+              Capital:Berlin
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of country-tile -->
+
+
+      </div>
+      <!-- end of countries tiles display-->
+
+    </div>
+    <!-- end of countries display container -->
+    <!-- individual country details display -->
+    <div class="individual-country-details-display">
+      <div class="individual-country-flag-image-container">
+        <img class="individual-country-flag" src="./design/afg.svg" alt="country's flag image">
+      </div>
+
+        <div class="main-details-container">
+          <div class="country-name-container">
+            Belgium
+          </div>
+          <div class="details">
+            <div class="general-details-container">
+                <div class="native-name">Native Name: Belgie</div>
+                <div class="population">Population:11,319,511</div>
+                <div class="region">Region: Europe</div>
+                <div class="sub-region">Sub Region: Western Europe</div>
+                <div class="capital">Capital: Brussels</div>
+            </div>
+            <div class="sub-details-container">
+                <div class="top-level-domain">Top Level Domain: .be</div>
+                <div class="currencies">Currencies: Euro</div>
+                <div class="languages">Languages: Dutch, French, German</div>
+            </div>
+        </div>
+        <div class="border-countries-container">
+            Border Countries:
+            <div class="border-countries">
+              <span class="border-country">France</span>
+              <span class="border-country">Germany</span>
+              <span class="border-country">Netherlands</span>
+            </div>
+        </div>
+        </div>
+
+    </div>
+    <!-- end of individual country details display -->
+    </div>
+    <!-- end of container center -->
+  </div>
+    <!--end of main container -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
