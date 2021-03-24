@@ -14,6 +14,7 @@
     <script src="https://kit.fontawesome.com/52f2afaff9.js" crossorigin="anonymous"></script>
     <!--end of font awesome  -->
     <!-- styles -->
+    <!-- <link rel="stylesheet" href="./reset.css"> -->
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./responsiveStyles/desktop.css">
     <link rel="stylesheet" href="./responsiveStyles/tablet.css">
@@ -22,22 +23,19 @@
   </head>
   <body>
     <!-- main container -->
-    <div class="main-container">
+    <div class="main-container toggle-dark-mode">
     <!-- header -->
-    <header>
+    <nav class="toggle-dark-mode">
       <!-- where in the world container -->
       <div class="where-in-world">
-        <h3>Where in the World?</h3>
+        <h1>Where in the World?</h1>
       </div>
       <!-- dark mode switcher container -->
-      <div class="dark-mode-switcher-container">
-        <i class="fas fa-moon"></i>
-        <span class="dark-mode-text">
-          dark mode
-        </span>
+      <div class="dark-mode-switcher-button toggle-dark-mode toggle">
+        <i class="far fa-moon"></i> Light Mode
       </div>
       <!-- end of dark mode switcher -->
-    </header>
+    </nav>
     <!-- end of header -->
     <!-- container center -->
     <div class="container-center">
@@ -47,13 +45,13 @@
     <form action="" >
       <div class="search-input-container">
         <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search for a country" class="search-input">
+        <input type="text" placeholder="Search for a country" class="search-input toggle-dark-mode">
       </div>
     </form>
     <!-- end of search form  -->
     <!-- filter select form container -->
     <div class="filter-form-container">
-      <select name="" id="filter-countries">
+      <select name="" class="filter-countries toggle-dark-mode" >
         <option value="africa">Africa</option>
         <option value="america">America</option>
         <option value="asia">Asia</option>
@@ -65,7 +63,7 @@
     </div>
     <!-- end of select form and filter form container -->
     <!--back button -->
-    <button class="back-button">
+    <button class="back-button toggle-dark-mode">
       <i class="fas fa-arrow-left"></i> Back
     </button>
     <!--end of back button -->
@@ -73,7 +71,7 @@
     <div class="countries-display-container">
       <div class="countries-tiles-display">
       <!-- country-tile -->
-      <div class="country-tile" data-region="region">
+      <div class="country-tile toggle-dark-mode" data-region="region">
         <div class="country-flag-image-container">
           <img class="country-flag" src="./design/afg.svg" alt="image of a country's flag">
         </div>
@@ -96,7 +94,7 @@
       </div>
       <!-- end of country-tile -->
       <!-- country-tile -->
-      <div class="country-tile" data-region="region">
+      <div class="country-tile toggle-dark-mode" data-region="region">
         <div class="country-flag-image-container">
           <img class="country-flag" src="./design/afg.svg" alt="image of a country's flag">
         </div>
@@ -119,7 +117,7 @@
       </div>
       <!-- end of country-tile -->
       <!-- country-tile -->
-      <div class="country-tile" data-region="region">
+      <div class="country-tile toggle-dark-mode" data-region="region">
         <div class="country-flag-image-container">
           <img class="country-flag" src="./design/afg.svg" alt="image of a country's flag">
         </div>
@@ -142,7 +140,7 @@
       </div>
       <!-- end of country-tile -->
       <!-- country-tile -->
-      <div class="country-tile" data-region="region">
+      <div class="country-tile toggle-dark-mode" data-region="region">
         <div class="country-flag-image-container">
           <img class="country-flag" src="./design/afg.svg" alt="image of a country's flag">
         </div>
@@ -172,7 +170,7 @@
     </div>
     <!-- end of countries display container -->
     <!-- individual country details display -->
-    <div class="individual-country-details-display">
+    <div class="individual-country-details-display toggle-dark-mode">
       <div class="individual-country-flag-image-container">
         <img class="individual-country-flag" src="./design/afg.svg" alt="country's flag image">
       </div>
@@ -198,9 +196,9 @@
         <div class="border-countries-container">
             Border Countries:
             <div class="border-countries">
-              <span class="border-country">France</span>
-              <span class="border-country">Germany</span>
-              <span class="border-country">Netherlands</span>
+              <span class="border-country toggle-dark-mode">France</span>
+              <span class="border-country toggle-dark-mode">Germany</span>
+              <span class="border-country toggle-dark-mode">Netherlands</span>
             </div>
         </div>
         </div>
