@@ -37,13 +37,21 @@
 /* styles for heading  */
 nav{
   background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  margin-bottom: 100px;
   padding:5px 50px;
   height:60px;
   display:flex;
   justify-content: space-between;
   align-items:center;
-  box-shadow: var(--box-shadow-header);
+  /* box-shadow: var(--box-shadow-header); */
   /* box-shadow:var(--box-shadow-other); */
+  z-index: 2;
+}
+.fixed-nav nav{
+  position: fixed;
+  margin-bottom: 50px;
+  width: 100%;
+  box-shadow: var(--box-shadow-header);
 }
 .dark-mode-switcher-button{
   cursor: pointer;
@@ -64,6 +72,7 @@ nav{
   display: flex;
   justify-content: space-between;
   margin:30px auto;
+  margin-top:100px;
 }
 /* end of styles for search form filter container */
 /* styles for search input and container */
@@ -242,9 +251,7 @@ nav{
   letter-spacing: 1.5;
   margin-bottom: 10px;
 }
-.border-countries-container{
 
-}
 .border-countries{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(50px,1fr));

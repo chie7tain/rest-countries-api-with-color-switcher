@@ -35,10 +35,22 @@ const nav = document.querySelector("nav");
     darkModeBtn.innerHTML = `<i class="fas fa-moon"> Dark Mode`
   }
  }
-  darkModeBtn.addEventListener("click",toggleDarkMode)
-//  TODO:IMPLEMENT STICKY NAV BAR FEATURE
+  darkModeBtn.addEventListener("click",toggleDarkMode);
 
+//  TODO:IMPLEMENT STICKY NAV BAR FEATURE
+const topOfNav = nav.offsetTop;
+    const fixedNav =()=>{
+      if(window.scrollY >= topOfNav){
+        document.body.classList.add("fixed-nav");
+      }else{
+        document.body.classList.remove("fixed-nav");
+
+      }
+    }
+    window.addEventListener("scroll",fixedNav);
  // TODO:IMPLEMENT DISPLAY COUNTRIES FEATURE
+ 
+//  TODO:IMPLEMENT PAGINATION FEATURE
  // TODO:IMPLEMENT SEARECH FEATURE
  // TODO:IMPLEMENT FILTER BY REGION FEATURE
  // TODO:IMPLEMENT BACK BUTTON FEATURE
