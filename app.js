@@ -9,7 +9,8 @@ const filterInput = document.querySelector(".filter-countries");
 const nav = document.querySelector("nav");
 const countriesTileDisplay = document.querySelector(".countries-tiles-display");
 const ulTag = document.querySelector("ul");
-
+const previousBtn = document.querySelector(".previous");
+const nextBtn = document.querySelector(".next");
 
 
 
@@ -24,8 +25,12 @@ const topOfNav = nav.offsetTop;
       }
     }
     window.addEventListener("scroll",fixedNav);
+
+
   // TODO:IMPLEMENT FETCH FEATURE
   const restCountriesApiUrl = "https://restcountries.eu/rest/v2/all?fields=name;capital;currencies;region;subregion;population;languages;flag;topLevelDomain;nativeName;borders";
+    let url = "./countries.json"
+
   const fetchCountries = async (url)=>{
     let result = await fetch(url);
     let countries = await result.json();
@@ -47,6 +52,7 @@ const topOfNav = nav.offsetTop;
  // TODO:IMPLEMENT DISPLAY COUNTRIES FEATURE
     class UI {
       static displayCountries =(countries)=>{
+        // console.log(countries)
         let countryTile = "";
         countries.forEach(country =>{
           countryTile += `
@@ -73,7 +79,7 @@ const topOfNav = nav.offsetTop;
             </div>
           `;
         })
-        // countriesTileDisplay.innerHTML = countryTile;
+        countriesTileDisplay.innerHTML = countryTile;
       }
        // TODO:IMPLEMENT DARK MODE
  static toggleDarkMode = ()=>{
@@ -97,9 +103,45 @@ const topOfNav = nav.offsetTop;
   }
  }
  //  TODO:IMPLEMENT PAGINATION FEATURE
-//  static paginateCountries(){
+ static paginateCountries(countriesArray){
+    //  chunk countries list so that the array of countries would first be divided into groups of array items
+    function chunkCountries(arr,sizePerChunk){
+      let res = []; //this array would hold the chunked data of our countries array
+      // we create a for loop to loop through the contents of the array and chunk it into groups of the given size using Array.slice() method
+      for(let i = 0; i< arr.length; i += sizePerChunk){
+        let chunk = arr.slice(i, i + sizePerChunk);
+        //after chunking the array we then push it into the results array
+        res.push(chunk);
+      }
+      return res;
     }
 
+    let chunkedCountriesArray = chunkCountries(countriesArray,3);
+    // console.log(chunkedCountriesArray[chunkedCountriesArray.length -1]);
+    for(let i = 17; i<chunkedCountriesArray.length; i++){
+      let lastChunk = chunkedCountriesArray[chunkedCountriesArray.length -1];
+      let page = 17;
+      this.displayCountries(chunkedCountriesArray[page]);
+      previousBtn.addEventListener("click",()=>{
+        page -= 1;
+        this.displayCountries(chunkedCountriesArray[page]);
+      })
+      nextBtn.addEventListener("click",()=>{
+        page += 1;
+        this.displayCountries(chunkedCountriesArray[page])
+        if(!lastChunk){
+          console.log(lastChunk)
+          nextBtn.classList.remove("disable-btn");
+        }else{
+          nextBtn.classList.add("disable-btn");
+        }
+      })
+    }
+
+
+    }
+
+  }
 darkModeBtn.addEventListener("click",UI.toggleDarkMode);
 
 
@@ -111,10 +153,10 @@ darkModeBtn.addEventListener("click",UI.toggleDarkMode);
 
 //  TODO:addEventListener to window object so that the methods fun only when the UI is ready
 const runMethods= ()=>{
-  fetchCountries("./countries.json").then(countries => {
-    UI.displayCountries(countries);
+  fetchCountries(url).then(countries => {
+    // UI.displayCountries(countries);
     UI.toggleDarkMode(countries);
-    // UI.paginateCountries();
+    UI.paginateCountries(countries);
   })
 }
 document.addEventListener("DOMContentLoaded",runMethods);
