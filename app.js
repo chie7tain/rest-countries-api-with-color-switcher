@@ -116,24 +116,33 @@ const topOfNav = nav.offsetTop;
       return res;
     }
 
-    let chunkedCountriesArray = chunkCountries(countriesArray,3);
+    let chunkedCountriesArray = chunkCountries(countriesArray,8);
     // console.log(chunkedCountriesArray[chunkedCountriesArray.length -1]);
-    for(let i = 17; i<chunkedCountriesArray.length; i++){
+    previousBtn.disabled = true;
+    for(let i = 0; i<chunkedCountriesArray.length; i++){
+
       let lastChunk = chunkedCountriesArray[chunkedCountriesArray.length -1];
-      let page = 17;
+      let indexLastChunk = chunkedCountriesArray.findIndex(item => item === lastChunk );
+      let page = 0;
       this.displayCountries(chunkedCountriesArray[page]);
       previousBtn.addEventListener("click",()=>{
         page -= 1;
         this.displayCountries(chunkedCountriesArray[page]);
+        if(page === 0){
+          previousBtn.disabled = true;
+        }
+        if(nextBtn.disabled){
+          nextBtn.disabled = false;
+        }
       })
+
       nextBtn.addEventListener("click",()=>{
+        // console.log(lastChunk)
         page += 1;
+        previousBtn.disabled = false;
         this.displayCountries(chunkedCountriesArray[page])
-        if(!lastChunk){
-          console.log(lastChunk)
-          nextBtn.classList.remove("disable-btn");
-        }else{
-          nextBtn.classList.add("disable-btn");
+        if(page === indexLastChunk){
+          nextBtn.disabled = true;
         }
       })
     }
